@@ -49,10 +49,7 @@ void setup() {
   else
     Serial.println("MPU6050 connection failed");
 
-  accelerometer.setDHPFMode(MPU6050_DHPF_RESET); // reset
-  delay(100);
   accelerometer.setFullScaleAccelRange(range);
-
   accelerometer.setIntZeroMotionEnabled(true);
   accelerometer.setZeroMotionDetectionThreshold(100);
   accelerometer.setZeroMotionDetectionDuration(3);

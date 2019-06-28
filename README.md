@@ -18,9 +18,13 @@ read accelerometer data in each loop() call.
 I observe some strange behaviour.
 1. no matter what threshold I set, it's still too sensitive and gives interrupt
    on little movement (even max value 255).
+   Do I understand it correctly that max detection sensitivity is 0,5 g (512 mg)
+   as the unit of threshold is 2mg?
 2. when the duration is 9 (or less) the interrupt is fired even on little
    movement. When it's 10 (or more) the interrupt is not fired no matter how
    hard I shake the device.
+   Why the MPU6050 detects movement for 9ms but not for 10ms as the unit of
+   duration is 1 ms (at 1kHz)?
 3. same applies to wakeup. I set the ESP32 to wake up on interrupt on PIN 34
    and put it to sleep. It wakes up on little movement. I tried various
    thresholds and durations.
